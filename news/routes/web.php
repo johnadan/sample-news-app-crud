@@ -54,43 +54,30 @@ Route::get('/createnew', "NewsController@postCreate");
 //     else return view ('search')->withMessage('No matches found. Try to search again');
 // });
 
-Route::post ( '/search', function () {
-	$q = Request::get ( 'q' );
-	if($q != ""){
-		$news = News::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'author', 'LIKE', '%' . $q . '%' )->orWhere ( 'date', 'LIKE', '%' . $q . '%' )->get ();
-		if (count ( $news ) > 0)
-			return view ( 'search' )->withDetails ( $news )->withQuery ( $q );
-		else
-			return view ( 'search' )->withMessage ( 'No matches found. Try to search again' );
-	}
-	return view ( 'search' )->withMessage ( 'No matches found. Try to search again' );
-} );
-
-Route::post ( '/search', function () {
-	$q = Input::get ( 'q' );
-	if($q != ""){
-		$user = User::where ( 'name', 'LIKE', '%' . $q . '%' )->orWhere ( 'email', 'LIKE', '%' . $q . '%' )->get ();
-		if (count ( $user ) > 0)
-			return view ( 'welcome' )->withDetails ( $user )->withQuery ( $q );
-		else
-			return view ( 'welcome' )->withMessage ( 'No Details found. Try to search again !' );
-	}
-	return view ( 'search-functionality-in-laravel/welcome' )->withMessage ( 'No Details found. Try to search again !' );
-} );
+// Route::post ( '/search', function () {
+// 	$q = Request::get ( 'q' );
+// 	if($q != ""){
+// 		$news = News::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'author', 'LIKE', '%' . $q . '%' )->orWhere ( 'date', 'LIKE', '%' . $q . '%' )->get ();
+// 		if (count ( $news ) > 0)
+// 			return view ( 'search' )->withDetails ( $news )->withQuery ( $q );
+// 		else
+// 			return view ( 'search' )->withMessage ( 'No matches found. Try to search again' );
+// 	}
+// 	return view ( 'search' )->withMessage ( 'No matches found. Try to search again' );
+// } );
 
 // Route::get('/clear-cache', function() {
 //     Artisan::call('cache:clear');
 //     return "Cache is cleared";
 // });
 
-// Route::any('/search',function(){
-//     $q = Request::get ( 'q' );
-//     $new = News::where('title','LIKE','%'.$q.'%')->orWhere('author','LIKE','%'.$q.'%')->get();
-//     if(count($new) > 0)
-//         return view('/home')->withDetails($new)->withQuery ( $q );
-//     //return view ( ‘welcome’ )->withDetails ( $user )->withQuery ( $q );
-//     else return view ('/home')->withMessage('No matches found.');
-// });
+Route::any('/search',function(){
+    $q = Request::get ( 'q' );
+    $new = News::where('title','LIKE','%'.$q.'%')->orWhere('author','LIKE','%'.$q.'%')->orWhere('date','LIKE','%'.$q.'%')->get();
+    if(count($new) > 0)
+        return view('search')->withDetails($new)->withQuery ( $q );
+    else return view ('search')->withMessage('No matches found.');
+});
 
 Auth::routes();
 
