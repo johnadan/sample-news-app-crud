@@ -18,7 +18,6 @@
     @endif
       <form id="addNews" method="POST" enctype="multipart/form-data" action="{{ route('news.store') }}">
           {{ csrf_field() }}
-          {{-- action="/createnew" --}}
           <div class="form-group">
               <label for="news-title" class="col-form-label">Title:</label>
               <input type="text" class="form-control" id="news-title" name="title">
@@ -45,34 +44,5 @@
       <p class="mt-5"><a href="{{ route('home') }}">Back</p>
   </div>
 </div>
-
-{{-- <div class="container">
-	<form id="addNews" method="POST" action="/createnew" enctype="multipart/form-data">
-      {{ csrf_field() }}
-      <span id="Newsadd">Set Content of News</span>
-      <div class="form-group">
-        <label for="news-title" class="col-form-label">Title:</label>
-        <input type="text" class="form-control" id="news-title" name="title">
-      </div>
-      <div class="form-group">
-        <label for="news-author" class="col-form-label">Author:</label>
-        <input type="text" class="form-control" id="news-author" name="author">
-      </div>
-      <div class="form-group">
-        <label for="news-date" class="col-form-label">Date:</label>
-        <input type="text" class="form-control" id="news-date" name="date">
-      </div>
-      <div class="form-group">
-        <label for="news-content" class="col-form-label">Content:</label>
-        <textarea class="form-control" id="news-content" name="content" rows="10"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="news-image">Featured Image:</label>
-        <input type="file" class="form-control-file" id="news-image" name="image">
-      </div>
-      <button type="submit" id="addModalBtn" class="btn btn-success">Save</button> 
-      <input type="hidden" value="{{ Session::token() }}" name="_token"> 
-    </form>
-</div> --}}
 
 @endsection

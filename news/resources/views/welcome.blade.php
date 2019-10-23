@@ -33,7 +33,6 @@
             }
 
             .flex-center {
-               /* align-items: center;*/
                 display: flex;
                 justify-content: center;
             }
@@ -55,11 +54,6 @@
             .title {
                 font-size: 50px;
             }
-
-            /*img {
-              height: 50vh;
-              width: 50vw;  
-            }*/
 
             .card-img-top {
               width: 50%;
@@ -102,18 +96,11 @@
                           <div class="card my-5">
                             <img src="<?php echo asset("storage/$new->image")?>" class="card-img-top" alt="news image">
                             <div class="card-body py-5 px-5">
-                              {{-- <h5 class="card-title">Title</h5> --}}
                               <h5 class="card-title"><strong>{{ $new->title }}</strong></h5>
-                              {{-- <h6>Author</h6> --}}
                               <h6>by {{ $new->author }}</h6>
-                              {{-- <p class="card-text">Content. <a href="">Learn more..</a></p> --}}
-                              {{-- <p class="card-text">{{ $new->content }} <a href="{{ url('/news/{id}') }}">See more..</a></p> --}}
-
-                              {{-- <p class="card-text">{{ $new->content }} <a href="{{ route('news.show', $new->id) }}">See more..</a></p> --}}
                               <p class="card-text"><a href="{{ route('news.show', $new->id) }}">See full article..</a></p>
                             </div>
                             <div class="card-footer">
-                              {{-- <small class="text-muted">Date</small> --}}
                               <small class="text-muted">Posted on {{ $new->date }}</small>
                             </div>
                           </div>
