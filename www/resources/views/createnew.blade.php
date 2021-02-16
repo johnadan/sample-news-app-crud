@@ -28,7 +28,10 @@
           </div>
           <div class="form-group">
               <label for="news-date" class="col-form-label">Date:</label>
-              <input type="text" class="form-control" id="news-date" name="date">
+              <!-- <input type="text" class="form-control" id="news-date" name="date"> -->
+              <div class="col-10">
+                <input class="form-control" type="date" id="example-date-input">
+              </div>
           </div>
           <div class="form-group">
             <label for="news-content" class="col-form-label">Content:</label>

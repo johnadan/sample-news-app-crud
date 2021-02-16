@@ -1,8 +1,7 @@
 <?php
 
-use App\News;
-
 namespace App;
+use App\News;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
