@@ -57,7 +57,10 @@
                   <td>{{ $new->date }}</td>
                   <td>{{ $new->created_at }}</td>
                   <td>{{ $new->content }}</td>
-                  <td>{{ $new->image }}</td>
+                  <td>
+                  <!-- {{ $new->image }} -->
+                  <img src="<?php echo asset("storage/$new->image")?>" class="card-img-top" alt="news image">
+                  </td>
                   <td>
 
                     <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#editModal" onclick="window.location='{{ route('news.edit', $new->id) }}'"><i class="fa fa-edit"></i></button>

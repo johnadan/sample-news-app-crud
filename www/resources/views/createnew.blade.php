@@ -30,7 +30,7 @@
               <label for="news-date" class="col-form-label">Date:</label>
               <!-- <input type="text" class="form-control" id="news-date" name="date"> -->
               <div class="col-10">
-                <input class="form-control" type="date" id="example-date-input">
+                <input class="form-control" type="date" id="news-date" name="date">
               </div>
           </div>
           <div class="form-group">

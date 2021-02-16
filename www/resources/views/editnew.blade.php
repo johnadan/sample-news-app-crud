@@ -37,7 +37,10 @@
         </div>
         <div class="form-group">
           <label class="col-form-label" for="new-date">Date:</label>
-          <input type="text" class="form-control" name="editeddate" value="{{ $new->date }}"></input>
+          <!-- <input type="text" class="form-control" name="editeddate" value="{{ $new->date }}"></input> -->
+          <div class="col-10">
+            <input class="form-control" type="date" name="editeddate" value="{{ $new->date }}">
+          </div>
         </div>
         <div class="form-group">
           <label class="col-form-label" for="new-content">Content:</label>
