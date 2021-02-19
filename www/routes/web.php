@@ -23,6 +23,10 @@ Route::resource('news', 'NewsController');
 
 Route::get('/createnew', "NewsController@postCreate");
 
+Route::delete('/deleteNews/{id}', "NewsController@destroy");
+
+// ->name('post.delete')
+
 // Route::post('/search',function(){
 //     $q = Request::get ( 'q' );
 //     $news = News::where('title','LIKE','%'.$q.'%')->orWhere('author','LIKE','%'.$q.'%')->get();

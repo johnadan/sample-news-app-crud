@@ -61,11 +61,13 @@ class NewsController extends Controller
     public function update(Request $request, $id){
          // ddd($new);
         $this->validate($request, [
-        'editedtitle' => 'required',
-         'editedauthor' => 'required',
+        'editedtitle' => 'string',
+         'editedauthor' => 'string',
          'editeddate' => 'required',
-         'editedcontent' => 'required',
-         //'image' => 'required'
+         'editedcontent' => 'string',
+        //  'editedimage' => 'required'
+        //  'editedimage' => 'image|mimes:jpeg,png,jpg,gif,svg'
+        // 'editedimage' => 'mimes:jpeg,png,jpg,gif,svg'
         ]);
         $new = News::find($id);
         // ddd($new);
@@ -73,13 +75,17 @@ class NewsController extends Controller
         $new->author = $request->editedauthor;
         $new->date = $request->editeddate;
         $new->content = $request->editedcontent;
+        //$new->image = $request->editedimage;
 
         // $file = $request->file('editedimage');
         // $new->image = Storage::disk('public')->put('editedimage', $file);
+        
+        //$new->image = Storage::disk('public/storage/image')->put('editedimage', $file);
 
         //$new->save();
         
         // return redirect('home')->with('success', 'News has been edited successfully');
+        
         if ($request->user()->news()->save($new)){
             return redirect('home')->with('success', 'News has been edited successfully');
         }

@@ -50,6 +50,10 @@
           <label for="news-image">Featured Image:</label>
           <input type="file" class="form-control-file" name="editedimage">
         </div> --}}
+        {{-- <div class="form-group">
+          <label for="news-image">Featured Image:</label>
+          <input type="file" class="form-control-file" name="editedimage" value="{{ $new->image }}">
+        </div> --}}
         <button type="submit" id="editModalBtn" class="btn btn-success" data-id="{{$new->id}}">Save</button>
       </form>
       <p class="mt-5"><a href="{{ route('home') }}">Back</p>  
