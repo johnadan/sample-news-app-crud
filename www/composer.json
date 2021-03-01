@@ -9,14 +9,18 @@
     "license": "MIT",
     "require": {
         "php": "^7.2||^8.0",
+        "codedge/laravel-fpdf": "^1.7",
         "fideloper/proxy": "^4.0",
         "illuminate/support": "^6.2",
+        "intervention/image": "^2.5",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.0",
-        "orangehill/iseed": "dev-master"
+        "orangehill/iseed": "dev-master",
+        "simplesoftwareio/simple-qrcode": "^4.2"
     },
     "require-dev": {
+        "damianopetrungaro/php-commitizen": "^0.2.0",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",

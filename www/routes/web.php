@@ -55,6 +55,25 @@ Route::any('/search',function(){
     else return view ('search')->withMessage('No matches found.');
 });
 
+Route::get('/test', function()
+{
+    $img = Image::make('foo.jpg')->resize(300, 200);
+
+    return $img->response('jpg');
+});
+
+Route::get('/pdf', 'NewsController@createPDF');
+
+//codedge/laravel-fpdf other example, direct embed to route
+// Route::get('/', function (Codedge\Fpdf\Fpdf\Fpdf $fpdf) {
+
+//     $fpdf->AddPage();
+//     $fpdf->SetFont('Courier', 'B', 18);
+//     $fpdf->Cell(50, 25, 'Hello World!');
+//     $fpdf->Output();
+
+// });
+
 Auth::routes();
 
 
